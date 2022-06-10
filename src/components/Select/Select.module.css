@@ -1,0 +1,16 @@
+.select span.main {
+    width: 100px;
+    border: 3px solid black;
+    display: inline-block;
+}
+
+.items {
+    width: 100px;
+    position: absolute;
+    border: 3px solid black;
+}
+
+.item.selected {
+    background-color: cornflowerblue;
+    color: white;
+}
