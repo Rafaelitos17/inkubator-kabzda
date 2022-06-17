@@ -4,7 +4,7 @@ type RatingPropsType = {
     value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
-export function Rating(props: RatingPropsType) {
+function RatingSecret(props: RatingPropsType) {
     return (
         <div>
             <Star selected={props.value > 0}/>
@@ -16,10 +16,12 @@ export function Rating(props: RatingPropsType) {
     )
 }
 
+export const Rating = React.memo(RatingSecret)
+
 type StarPropsType = {
     selected: boolean
 }
 
 function Star(props: StarPropsType) {
-    return <span>{props.selected? <b>star</b>:"star"}</span>
+    return <span>{props.selected ? <b>star</b> : "star"}</span>
 }

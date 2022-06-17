@@ -1,25 +1,26 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {Select} from "./components/Select/Select";
+import {Rating} from "./components/Rating/Rating";
 
 function App() {
     // const [value, setValue] = useState<boolean>(true)
-    const[value, setValue] = useState('2')
+    const [value, setValue] = useState('2')
     return (
         <div className="App">
             {/*<PageTitle title={"This is APP component"}/>*/}
             {/*<PageTitle title={"My friends"}/>*/}
             {/*Week 1*/}
             {/*Week 2*/}
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
             {/*<OnOff/>*/}
             {/*Week 3*/}
             {/*<hr/>*/}
@@ -54,20 +55,23 @@ function App() {
             <Select
                 onChange={setValue}
                 value={value}
-                items={[
-                    {value: '1', title: 'Moscow'},
-                    {value: '2', title: 'Minsk'},
-                    {value: '3', title: 'Kyiv'},
-                ]}
+                items={
+                    [
+                        {value: '1', title: 'Moscow'},
+                        {value: '2', title: 'Minsk'},
+                        {value: '3', title: 'Kyiv'},
+                    ]
+                }
             />
-            {/*<Select*/}
-            {/*    onChange={console.log("Selected")}*/}
-            {/*    items={[*/}
-            {/*        {value: '1', title: 'Moscow'},*/}
-            {/*        {value: '2', title: 'Minsk'},*/}
-            {/*        {value: '3', title: 'Kyiv'},*/}
-            {/*    ]}*/}
-            {/*/>*/}
+            <UncontrolledAccordion titleValue={'Hello'}
+                                   items={
+                                       [
+                                           {title: 'Ansu', value: 1},
+                                           {title: 'Ferran', value: 2},
+                                           {title: 'Auba', value: 3},
+                                           {title: 'Pedri', value: 4}
+                                       ]
+                                   }/>
         </div>
     );
 }
